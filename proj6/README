@@ -1,0 +1,7 @@
+Project 6 
+-How to compile
+
+     gcc -m32 -ansi -Wall -g -c test1.c frac_heap.c
+     gcc -m32 test1.o frac_heap.o
+     ./a.out 
+

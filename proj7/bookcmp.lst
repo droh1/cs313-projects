@@ -1,0 +1,83 @@
+     1                                  ;;File: 	bookcmp.asm
+     2                                  ;;Project:	Project 7
+     3                                  ;;Author: 	Daniel Roh
+     4                                  ;;Date:		04/29/18
+     5                                  ;;Section: 	3 
+     6                                  ;;E-mail: 	droh1@umbc.edu
+     7                                  ;;
+     8                                  ;;--How to compile--
+     9                                  ;; nasm -f elf -g bookcmp.asm
+    10                                  ;; gcc -m32 -ansi -Wall -g -c sort_books.c
+    11                                  ;; gcc -m32 -ansi -g main7.o sort_books.o bookcmp.o -o sort_books
+    12                                  ;; ./sort_books < books.dat
+    13                                  ;;
+    14                                  %define TITLE_OFFSET 0
+    15                                  %define AUTHOR_OFFSET 33
+    16                                  %define SUBJECT_OFFSET 54
+    17                                  %define YEAR_OFFSET 68
+    18                                  	
+    19                                  
+    20                                      SECTION .text                   ; Code section.
+    21                                      global  bookcmp                 ; let loader see entry point
+    22                                  	extern	book1, book2
+    23                                  
+    24                                  bookcmp: 
+    25 00000000 55                      	push	ebp
+    26 00000001 89E5                    	mov ebp, esp
+    27                                  	
+    28 00000003 57                      	push	edi			; push registers we want to use
+    29 00000004 56                      	push	esi
+    30                                  	
+    31                                  
+    32 00000005 8B7D08                  	mov	edi, [ebp + 8]		; get the pointer to the first book
+    33 00000008 8B4744                  	mov	eax, [edi + YEAR_OFFSET];   and fetch the year field
+    34 0000000B 8B750C                  	mov	esi, [ebp + 12]		; Get the pointer to the second book
+    35 0000000E 3B4644                  	cmp	eax, [esi + YEAR_OFFSET]; and compare the year field to book1's
+    36 00000011 7523                    	jne	cmpDone			; If they're different, we're done with comparisons
+    37                                  
+    38                                  cmpTitles:				; Fall through to here if years same
+    39 00000013 8B7D08                  	mov	edi, [ebp + 8]		; Get address of book1's title
+    40 00000016 81C700000000            	add	edi, TITLE_OFFSET
+    41 0000001C 8B750C                  	mov	esi, [ebp + 12]		; Get address of book2's title
+    42 0000001F 81C600000000            	add	esi, TITLE_OFFSET
+    43                                  
+    44 00000025 8A07                    L1:	mov	al, [edi]		; Fetch next char of book1's title
+    45 00000027 3A06                    	cmp	byte al, [esi]		; and compare it to matching char in book 2
+    46 00000029 750B                    	jne	cmpDone			; If we find a difference, we are done (note this also works w/single NULL)
+    47                                  
+    48                                  	;; Last special case: strings are identical up to, and including, NULL
+    49 0000002B 3C00                    	cmp	byte al, 0
+    50 0000002D 7407                    	je	cmpDone
+    51 0000002F 47                      	inc	edi
+    52 00000030 46                      	inc	esi
+    53 00000031 E9EFFFFFFF              	jmp	L1
+    54                                  
+    55                                  cmpDone:
+    56                                          ;; condition codes still hold result of the last compare, so use it
+    57 00000036 7F16                    	jg	L_gt
+    58 00000038 740A                    	je	L_eq
+    59 0000003A B8FFFFFFFF              	mov	eax, -1		; book1 is strictly less than book2
+    60 0000003F E90F000000              	jmp	end
+    61                                  	
+    62                                  L_eq:	
+    63                                  
+    64 00000044 B800000000              	mov	eax, 0		; book1 equals book2
+    65 00000049 E905000000              	jmp	end
+    66                                  	
+    67                                  L_gt:	
+    68 0000004E B801000000              	mov	eax, 1		; book1 is strictly greater than book2
+    69                                  
+    70                                  	;; Clean up and finish
+    71                                  end:	
+    72 00000053 5E                      	pop	esi
+    73 00000054 5F                      	pop	edi
+    74                                  
+    75 00000055 89EC                    	mov esp, ebp
+    76 00000057 5D                      	pop ebp
+    77 00000058 C3                      	ret
+    78                                  	
+    79                                  	
+    80                                  	
+    81                                  	
+    82                                  	
+    83                                  	
