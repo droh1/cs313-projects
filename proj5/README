@@ -1,0 +1,13 @@
+This is for project 5
+
+How to compile:
+    gcc -m32 -ansi -Wall -g -c test1.c frac_heap.c
+    gcc -m32 -ansi -Wall -g -c test2.c frac_heap.c
+    gcc -m32 -ansi -Wall -g -c test3.c frac_heap.c
+
+Files:
+	Test1.c: Tests the case if heap overloaded
+	Test2.c: Tests the case if removed is used on a empty heap
+	Test3.c: Tests the case of multiple new fractions and multiple removes
+
+

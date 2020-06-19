@@ -1,0 +1,317 @@
+Script started on Wed 18 Apr 2018 04:11:12 PM EDT
+[droh1@linux2 proj5] make
+cc -m32 -g -ansi -Wall   -c -o main5.o main5.c
+frac_heap.h:22: warning: ‘head’ defined but not used
+cc -m32 -g -ansi -Wall   -c -o frac_heap.o frac_heap.c
+gcc -m32 main5.o frac_heap.o -o main5.out
+[droh1@linux2 proj5] ./a[Kmain5.out 
+-2/3 plus 1/4 = -5/12
+
+======= HEAP DUMP =======
+-First Free: 3
+
+0: -1	2	3
+1: 1	1	4
+2: -1	5	12
+3: 0	0	4
+4: 0	0	5
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+
+======= HEAP DUMP =======
+-First Free: 2
+
+0: -1	2	3
+1: 0	0	3
+2: -1	5	12
+3: 0	0	4
+4: 0	0	5
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+
+======= HEAP DUMP =======
+-First Free: 5
+
+0: -1	2	3
+1: 1	8	42
+2: -1	5	12
+3: 1	17	96
+4: 1	247	672
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] ./main5.out[22Gmake[Kexitls[K./a.out[22Gg++ -Wall Int341.cpp SqList.cpp p2comptest.cpp -o[22Gemacs typescript[K[22Gclear[K[22Gemacs typescript[22Gg++ -Wall Int341.cpp SqList.cpp p2comptest.cpp -o[K[22G./a.out[K[22Gls[Kexitmake./main5.out[22G[Kgcc -m32 -ansi -Wall test1.c frac_heap.c 
+frac_heap.h:22: warning: ‘head’ defined but not used
+[droh1@linux2 proj5] ./a.out 
+Test for filled heap operations
+
+======= HEAP DUMP =======
+-No More Free: HEAP FULL
+
+0: -1	2	3
+1: 1	1	4
+2: -1	4	2
+3: -1	6	9
+4: 1	3	2
+5: 1	1	2
+6: 1	4	5
+7: -1	14	2
+8: -1	11	2
+9: -1	10	33
+10: -1	3	2
+11: -1	4	45
+12: 1	4	4
+13: -1	4	12
+14: -1	4	21
+15: 1	4	23
+16: -1	42	2
+17: -1	43	42
+18: 1	41	2
+19: 1	2	19
+------- END DUMP --------
+
+
+Attempting to add more then spaces allowed
+
+
+ERROR: Heap is full
+
+======= HEAP DUMP =======
+-No More Free: HEAP FULL
+
+0: -1	2	3
+1: 1	1	4
+2: -1	4	2
+3: -1	6	9
+4: 1	3	2
+5: 1	1	2
+6: 1	4	5
+7: -1	14	2
+8: -1	11	2
+9: -1	10	33
+10: -1	3	2
+11: -1	4	45
+12: 1	4	4
+13: -1	4	12
+14: -1	4	21
+15: 1	4	23
+16: -1	42	2
+17: -1	43	42
+18: 1	41	2
+19: 1	2	19
+------- END DUMP --------
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] ./a.out[22Ggcc -m32 -ansi -Wall test1.c frac_heap.c[P[1@2
+frac_heap.h:22: warning: ‘head’ defined but not used
+[droh1@linux2 proj5] ./a.out 
+
+======= HEAP DUMP =======
+-First Free: 1
+
+0: -1	2	3
+1: 0	0	2
+2: 0	0	3
+3: 0	0	4
+4: 0	0	5
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+Testing double freeing
+
+======= HEAP DUMP =======
+-First Free: 0
+
+0: 0	0	0
+1: 0	0	2
+2: 0	0	3
+3: 0	0	4
+4: 0	0	5
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+
+======= HEAP DUMP =======
+-First Free: 1
+
+0: 1	1	19
+1: 0	0	2
+2: 0	0	3
+3: 0	0	4
+4: 0	0	5
+5: 0	0	6
+6: 0	0	7
+7: 0	0	8
+8: 0	0	9
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] ./a.out[22Ggcc -m32 -ansi -Wall test2.c frac_heap.c[P[1@3
+frac_heap.h:22: warning: ‘head’ defined but not used
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] gcc -m32 -ansi -Wall test3.c frac_heap.c[22G./a.out[K
+
+======= HEAP DUMP =======
+-First Free: 9
+
+0: -1	4	2
+1: 1	4	10
+2: -1	4	2
+3: -1	6	9
+4: 1	3	2
+5: 1	1	2
+6: 1	4	5
+7: -1	14	2
+8: -1	11	2
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+
+======= HEAP DUMP =======
+-First Free: 0
+
+0: 0	0	0
+1: 0	0	0
+2: 0	0	0
+3: 0	0	0
+4: 0	0	0
+5: 0	0	0
+6: 0	0	0
+7: 0	0	0
+8: 0	0	0
+9: 0	0	10
+10: 0	0	11
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+
+======= HEAP DUMP =======
+-First Free: 11
+
+0: -1	10	33
+1: -1	3	2
+2: -1	4	45
+3: 1	4	4
+4: -1	4	12
+5: -1	4	21
+6: 1	4	23
+7: -1	42	2
+8: -1	43	42
+9: 1	41	2
+10: 1	2	19
+11: 0	0	12
+12: 0	0	13
+13: 0	0	14
+14: 0	0	15
+15: 0	0	16
+16: 0	0	17
+17: 0	0	18
+18: 0	0	19
+19: 0	0	20
+------- END DUMP --------
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] 
+[droh1@linux2 proj5] exit
+exit
+
+Script done on Wed 18 Apr 2018 04:12:08 PM EDT
